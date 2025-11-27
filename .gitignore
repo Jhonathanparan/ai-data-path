@@ -18,3 +18,14 @@ __pycache__/
 # Ignore temporary output or logs
 *.log
 *.tmp
+
+
+# Ignore VS Code settings
+.vscode/
+
+# Ignore personal notes
+as_i_study.py
+
+# Ignore CSV and TXT data/log files
+*.csv
+*.txt
