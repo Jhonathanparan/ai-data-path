@@ -1,0 +1,17 @@
+# Python
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+
+# Editor
+.vscode/
+
+# Tableau
+*.twb~
+*.twbx~
+
+# Data (optional – keep raw if you want)
+# data/raw/
