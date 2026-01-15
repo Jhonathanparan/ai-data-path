@@ -29,3 +29,6 @@ as_i_study.py
 # Ignore CSV and TXT data/log files
 *.csv
 *.txt
+
+# SQLite databases
+*.db
