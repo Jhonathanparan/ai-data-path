@@ -106,10 +106,13 @@ class Bank:
             with open(file_name, "r") as f:
                 data = json.load(f)
         except FileNotFoundError:
-            return None
+            return False, "File not found"
+        except json.JSONDecodeError:
+            return False, "Corrupted JSON file"
         self.accounts = {}
         for account in data["accounts"]:
             returned_account = Account.from_dict(account)
             self.accounts[returned_account.account_number] = returned_account
 
         self.next_account_number = data["next_account_number"]
+        return True, "Bank data loaded successfully"

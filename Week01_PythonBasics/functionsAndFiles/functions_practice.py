@@ -52,6 +52,26 @@ def write_message_to_file(file_name, message):
 def read_file_contents(file_name):
     try:
         with open(file_name, "r") as f:
-            return f.read(file_name)
+            return f.read()
     except FileNotFoundError:
-        print("file not found")
+        return None
+
+
+def append_to_file(file_name, message):
+    try:
+        with open(file_name, "a") as f:
+            f.write(message + "\n")
+    except FileNotFoundError:
+        return None
+    return True
+
+
+def read_lines(file_name):
+    lines = []
+    try:
+        with open(file_name, "r") as f:
+            for line in f:
+                lines.append(line.strip())
+        return lines
+    except FileNotFoundError:
+        return None
