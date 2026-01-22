@@ -1,0 +1,18 @@
+# Virtual environment
+.venv/
+
+# Environment variables / secrets
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Data outputs (generated)
+data/raw/
+data/processed/
+data/reports/
+
+# OS / editor noise
+.DS_Store
+.vscode/
