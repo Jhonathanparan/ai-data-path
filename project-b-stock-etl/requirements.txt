@@ -13,3 +13,6 @@ python-dotenv==1.2.1
 requests==2.32.5
 six==1.17.0
 urllib3==2.6.3
+sendgrid==6.11.0
+matplotlib==3.10.8
+reportlab==4.4.9

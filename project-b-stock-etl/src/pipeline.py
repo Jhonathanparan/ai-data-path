@@ -13,15 +13,8 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-def main() -> None:
-    """
-    Entry point for the stock ETL pipeline.
-
-    This stage orchestrates extract → transform with
-    logging and rate-limit safety.
-    """
-    symbols = ["AAPL", "MSFT", "NVDA"]
-
+def run_pipeline(symbols: list[str]) -> None:
+    """Run the stock ETL pipeline for the given list of symbols."""
     try:
         logger.info("Starting the stock ETL pipeline.")
 
@@ -50,6 +43,12 @@ def main() -> None:
     except Exception:
         logger.exception("An error occurred during the pipeline execution.")
         raise
+
+
+def main() -> None:
+    """CLI entry point for the stock ETL pipeline."""
+    symbols = ["AAPL", "MSFT", "NVDA"]
+    run_pipeline(symbols)
 
 
 if __name__ == "__main__":

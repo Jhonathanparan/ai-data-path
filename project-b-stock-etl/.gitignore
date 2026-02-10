@@ -16,3 +16,5 @@ data/reports/
 # OS / editor noise
 .DS_Store
 .vscode/
+
+logs/
