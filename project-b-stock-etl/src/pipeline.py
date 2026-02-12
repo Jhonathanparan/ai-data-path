@@ -2,7 +2,7 @@ import logging
 import sys
 import time
 from src.load import save_dataframe_csv, save_dataframe_sqlite
-from src.extract import fetch_daily_adjusted
+from src.extract import fetch_daily_prices
 from src.transform import transform_prices
 
 logging.basicConfig(
@@ -20,7 +20,7 @@ def run_pipeline(symbols: list[str]) -> None:
 
         for symbol in symbols:
             try:
-                df = fetch_daily_adjusted(symbol)
+                df = fetch_daily_prices(symbol)
                 df = transform_prices(df)
                 save_dataframe_csv(df, symbol)
                 save_dataframe_sqlite(df, symbol)

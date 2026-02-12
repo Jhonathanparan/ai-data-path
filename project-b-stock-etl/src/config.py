@@ -17,3 +17,15 @@ ALPHAVANTAGE_API_KEY = os.getenv("ALPHAVANTAGE_API_KEY")
 
 if not ALPHAVANTAGE_API_KEY:
     raise ValueError("Missing ALPHAVANTAGE_API_KEY environment variable")
+
+
+# Symbols configuration (optional override via env)
+# Example: SYMBOLS="AAPL,MSFT,NVDA" or "AAPL MSFT NVDA"
+_raw_symbols = (os.getenv("SYMBOLS") or "").strip()
+
+if _raw_symbols:
+    STOCK_SYMBOLS = [
+        s.strip().upper() for s in _raw_symbols.replace(",", " ").split() if s.strip()
+    ]
+else:
+    STOCK_SYMBOLS = ["AAPL", "MSFT", "NVDA"]

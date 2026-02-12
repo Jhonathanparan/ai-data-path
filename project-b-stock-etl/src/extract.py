@@ -8,9 +8,9 @@ from src.config import ALPHAVANTAGE_API_KEY
 ALPHAVANTAGE_BASE_URL = "https://www.alphavantage.co/query"
 
 
-def fetch_daily_adjusted(symbol: str) -> pd.DataFrame:
+def fetch_daily_prices(symbol: str) -> pd.DataFrame:
     """
-    Fetch daily adjusted equity price data for a single ticker from Alpha Vantage.
+    Fetch daily equity price data for a single ticker from Alpha Vantage.
 
     The function is responsible for:
     - calling the external API
