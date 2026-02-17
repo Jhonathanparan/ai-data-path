@@ -1,6 +1,7 @@
 import logging
 import sys
 import time
+from src.config import STOCK_SYMBOLS
 from src.load import save_dataframe_csv, save_dataframe_sqlite
 from src.extract import fetch_daily_prices
 from src.transform import transform_prices
@@ -47,8 +48,7 @@ def run_pipeline(symbols: list[str]) -> None:
 
 def main() -> None:
     """CLI entry point for the stock ETL pipeline."""
-    symbols = ["AAPL", "MSFT", "NVDA"]
-    run_pipeline(symbols)
+    run_pipeline(STOCK_SYMBOLS)
 
 
 if __name__ == "__main__":
